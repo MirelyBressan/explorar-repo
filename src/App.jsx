@@ -46,17 +46,19 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center p-4">
-      <h1 className="text-3xl font-bold mb-6 text-blue-700">Explorador de Repositórios GitHub</h1>
-      <form onSubmit={handleSearch} className="flex gap-2 mb-4">
+    <div className="min-h-screen bg-gray-100 flex flex-col justify-center items-center p-4">
+      <header className="w-full flex flex-col items-center">
+        <h1 className="text-3xl font-bold mb-6 text-blue-700 text-center w-full">Explorador de Repositórios GitHub</h1>
+      </header>
+      <form onSubmit={handleSearch} className="flex flex-col items-center gap-2 mb-4 w-full max-w-2xl">
         <input
           type="text"
           placeholder="Nome de usuário do GitHub"
           value={username}
           onChange={e => setUsername(e.target.value)}
-          className="px-3 py-2 border rounded shadow focus:outline-none focus:ring"
+          className="w-full px-6 py-4 border rounded shadow focus:outline-none focus:ring text-lg text-center"
         />
-        <button type="submit" className="inline-flex bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Buscar</button>
+        <button type="submit" className="inline-flex bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 text-lg">Buscar</button>
       </form>
       <div className="inline-flex gap-2 mb-4">
         <button onClick={() => handleSort('desc')} className={`px-3 py-1 rounded ${sort==='desc' ? 'bg-blue-500 text-white' : 'bg-white border'}`}>Mais estrelas</button>
